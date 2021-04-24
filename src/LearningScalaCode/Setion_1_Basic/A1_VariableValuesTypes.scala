@@ -1,6 +1,6 @@
 package LearningScalaCode.Setion_1_Basic
 
-object VariableValuesTypes extends App{
+object A1_VariableValuesTypes extends App{
 
   //Values in Scala
 
