@@ -1,6 +1,6 @@
 package LearningScalaCode.Setion_1_Basic
 
-object CBNandCBV extends App{
+object A6_CBNandCBV extends App{
   def calledbyValue(x:Long):Unit={
     println("By value call==>"+ x)
     println("By value call==>"+ x)
