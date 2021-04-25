@@ -1,6 +1,6 @@
 package LearningScalaCode.Setion_1_Basic
 
-object Funtions extends App {
+object A3_Funtions extends App {
   def aFucn(a: String, b: Int): String = {
     a + " " + b
   }
