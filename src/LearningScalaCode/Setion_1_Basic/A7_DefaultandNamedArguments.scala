@@ -11,13 +11,13 @@ object A7_DefaultandNamedArguments extends App {
 
   //Default arguments work fine when default argument is in last
   //what if
-  def savePicture(format:String="jpeg",width:Int,Hieght:Int):Unit=
+  def savePicture(format: String = "jpeg", width: Int, Hieght: Int): Unit =
     println("Picture saved")
 
   //savepicture(800,600)//do not work bcoz compiler do not understands if 800 is argument for format or anything else
   /*Solution We can name the parameter while passing arguments in the function
   */
-  savePicture(width = 800,Hieght = 600)//by this we can pass parameter in any orders
+  savePicture(width = 800, Hieght = 600) //by this we can pass parameter in any orders
 
 
 }

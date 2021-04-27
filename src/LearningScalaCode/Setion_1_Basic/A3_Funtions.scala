@@ -48,8 +48,9 @@ object A3_Funtions extends App {
       if (k % m == 0)
         return false
       else
-        return true  && primeCheck(k, m - 1)
+        return true && primeCheck(k, m - 1)
     }
   }
+
   print(primeCheck(59, 58))
 }
