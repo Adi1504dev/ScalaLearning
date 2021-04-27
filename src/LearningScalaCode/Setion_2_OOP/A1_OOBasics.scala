@@ -14,7 +14,7 @@ object OOBasics extends App {
   println(person2.age)
 }
 
-class Person(name: String, val age: Int = 0)
+class Person(name: String, val age: Int = 0){
 //Constructor-- Default arguments can also be used
 //Class parameter is NOT FIELDS {
   //Body
