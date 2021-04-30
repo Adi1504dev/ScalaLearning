@@ -1,6 +1,6 @@
 package LearningScalaCode.Setion_2_OOP
 
-object ScalaObjects //extends App commenting it to show use of main
+object A5_ScalaObjects //extends App commenting it to show use of main
   //main method can only be created in object as it is static
 {
 //Scala do not have class level functionality ("static")
