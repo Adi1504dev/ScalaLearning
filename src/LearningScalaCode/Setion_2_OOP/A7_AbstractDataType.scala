@@ -44,6 +44,6 @@ object A7_AbstractDataType extends App{
   /*
   * 1. Traits do not have constructor parameters
   * 2. Multiple traits can be inherited in same class
-  * 3. traits = behaviour
+  * 3. traits = behaviour(like carnivore)   abstract=thing(like animal)
   * */
 }
