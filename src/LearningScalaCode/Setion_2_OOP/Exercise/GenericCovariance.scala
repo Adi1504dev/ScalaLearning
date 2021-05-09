@@ -53,27 +53,27 @@ object GenericCovariance extends App {
   {
     def objret[A1>:A](a:A1)=a
   }
-val covar=new covar[Animal]
+val covar:covar[Animal]=new covar[Cat]
   println("===================Covariance=======================")
   covar.objret(cat1).printer
   //covar.objret(cat1).Catprinter//It will only be animal object
   covar.objret(animal1).printer
   covar.objret(dog1).printer//Important It can also take object of dog but important is it can only call the the override func
 
-  //
+  //Contravariance
   class contravar[-A]
   {
     def objret[A1<:A](a:A1)=a
   }
 
   println("===================Contravariance=======================")
-  val contra=new contravar[Animal]
-  contra.objret(dog1).printer
+  val contra:contravar[Cat]=new contravar[Animal]
+  //contra.objret(dog1).printer
   contra.objret(cat1).Catprinter//If here we would have applied covariance then we would not have been able to print this as the
     //Object returned by covariance will be of parent class type but here the object is returned of child class type i.e. Cat class type
 
-  contra.objret(animal1).printer
-  contra.objret(dog1).dogprinter()
+  //contra.objret(animal1).printer
+  //contra.objret(dog1).dogprinter()
   contra.objret(cat1).printer
 
 
