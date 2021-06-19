@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_2_OOP
+package LearningScalaCode.Section_2_OOP
 
 object A2_ObjectExercise extends App {
   val w = new Writer("Aditya", "Singh", 1997)

@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_2_OOP
+package LearningScalaCode.Section_2_OOP
 
 object A5_ScalaObjects //extends App commenting it to show use of main
   //main method can only be created in object as it is static

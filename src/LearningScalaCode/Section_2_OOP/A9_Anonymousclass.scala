@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_2_OOP
+package LearningScalaCode.Section_2_OOP
 
 object A9_Anonymous_class extends App{
   trait Animal

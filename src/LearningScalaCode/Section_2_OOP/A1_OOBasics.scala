@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_2_OOP
+package LearningScalaCode.Section_2_OOP
 
 object OOBasics extends App {
   val person = new Person("Aditya", 25)

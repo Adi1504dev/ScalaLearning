@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_1_Basic
+package LearningScalaCode.Section_1_Basic
 
 object A4_TypeInference {
   //Compiler is able to figure out return type of expression

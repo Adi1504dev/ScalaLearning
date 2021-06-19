@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_2_OOP
+package LearningScalaCode.Section_2_OOP
 
 object A7_AbstractDataType extends App{
 //abstract--Classes which contains unimplemented Fields or methods are called abstract classes

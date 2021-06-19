@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_2_OOP
+package LearningScalaCode.Section_2_OOP
 
 object B1_CaseClasses extends App{
 // case classes have predefined implementation of method like equals ,toString, hashcode etc

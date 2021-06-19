@@ -1,8 +1,8 @@
-package LearningScalaCode.Setion_2_OOP
+package LearningScalaCode.Section_2_OOP
 
 import Playground.Cinderella
 import java.util.Date
-import java.sql.{Date=>SqlDate}
+import java.sql.{Date=>SqlDate, Time}
 //import Playground._//Cinderella//only use _ if only needed
 
 

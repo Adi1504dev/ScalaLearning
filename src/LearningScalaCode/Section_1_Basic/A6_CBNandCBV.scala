@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_1_Basic
+package LearningScalaCode.Section_1_Basic
 
 object A6_CBNandCBV extends App {
   def calledbyValue(x: Long): Unit = {

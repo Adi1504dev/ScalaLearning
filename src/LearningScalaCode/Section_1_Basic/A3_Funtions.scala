@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_1_Basic
+package LearningScalaCode.Section_1_Basic
 
 object A3_Funtions extends App {
   def aFucn(a: String, b: Int): String = {

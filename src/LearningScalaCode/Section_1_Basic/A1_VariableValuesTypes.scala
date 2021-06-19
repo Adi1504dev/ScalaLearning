@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_1_Basic
+package LearningScalaCode.Section_1_Basic
 
 object A1_VariableValuesTypes extends App {
 

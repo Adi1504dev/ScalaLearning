@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_1_Basic
+package LearningScalaCode.Section_1_Basic
 
 object A2_Expression extends App {
   val x = 1 + 2 //1+2 here is expression

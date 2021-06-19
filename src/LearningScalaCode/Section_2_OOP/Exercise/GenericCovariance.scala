@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_2_OOP.Exercise
+package LearningScalaCode.Section_2_OOP.Exercise
 
 object GenericCovariance extends App {
 

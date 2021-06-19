@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_1_Basic
+package LearningScalaCode.Section_1_Basic
 
 object A7_DefaultandNamedArguments extends App {
   def tailFacto(n: Int, acc: Int = 1): Int = //now we do not need to pass tail recursion value

@@ -1,14 +1,5 @@
-package LearningScalaCode.Setion_2_OOP.Exercise
+package LearningScalaCode.Section_3_Functions.Exercise
 
-trait MyPredicate[-T]
-{
-  def test(element:T): Boolean
-}
-
-trait MyTransformer[-A,B]
-{
-  def transform(element: A):B
-}
 
 abstract class MyList[+A]
 {
@@ -26,9 +17,9 @@ abstract class MyList[+A]
   //Polymorphic call of print Element
   override def toString:String="[" +printElement+ "]"
 
-  def map[B](transformer:MyTransformer[A,B]):MyList[B]
-  def flatMap[B](transformer: MyTransformer[A,MyList[B]]):MyList[B]
-  def filter(predicate: MyPredicate[A]): MyList[A]
+  def map[B](transformer:A=>B):MyList[B]
+  def flatMap[B](transformer: A=>MyList[B]):MyList[B]
+  def filter(predicate: A=>Boolean): MyList[A]
   def ++[B>:A](list:MyList[B]):MyList[B]
 }
 
@@ -44,11 +35,11 @@ case object Empty1 extends MyList[Nothing]
 
   override def printElement: String = ""
 
-  override def map[B](transformer: MyTransformer[Nothing, B]): MyList[B] = Empty1
+  override def map[B](transformer: Nothing=>B): MyList[B] = Empty1
 
-  override def flatMap[B](transformer: MyTransformer[Nothing, MyList[B]]): MyList[B] = Empty1
+  override def flatMap[B](transformer: Nothing=> MyList[B]): MyList[B] = Empty1
 
-  override def filter(predicate: MyPredicate[Nothing]): MyList[Nothing] = Empty1
+  override def filter(predicate: Nothing =>Boolean): MyList[Nothing] = Empty1
 
   override def ++[B >: Nothing](list: MyList[B]): MyList[B] = list
 }
@@ -74,8 +65,8 @@ case class NonEmpty[+A](h:A,t:MyList[A]) extends MyList[A]
    =new NonEmpty(2,new NonEmpty(4,new NonEmpty(2,Empty1)))
    */
 
-  override def map[B](transformer: MyTransformer[A, B]): MyList[B] =
-    new NonEmpty[B](transformer.transform(h),t.map(transformer))
+  override def map[B](transformer: A=>B): MyList[B] =
+    new NonEmpty[B](transformer(h),t.map(transformer))
 
   /*
   [1,2].flatmap(n=>[n,n+1])
@@ -84,8 +75,8 @@ case class NonEmpty[+A](h:A,t:MyList[A]) extends MyList[A]
  =[1,2] ++ [2,3] ++ Empty1
  =[1,2,2,3]
   * */
-  override def flatMap[B](transformer: MyTransformer[A, MyList[B]]): MyList[B] =
-    transformer.transform(h) ++ tail.flatMap(transformer)
+  override def flatMap[B](transformer: A=> MyList[B]): MyList[B] =
+    transformer(h) ++ tail.flatMap(transformer)
 
 
   /*
@@ -95,8 +86,8 @@ case class NonEmpty[+A](h:A,t:MyList[A]) extends MyList[A]
   * =new NonEmpty(2,Empty1.filter(n%2==0))
   * =new NonEmpty(2,Empty1)
    */
-  override def filter(predicate: MyPredicate[A]): MyList[A] =
-    if(predicate.test(h)) new NonEmpty[A](h,t.filter(predicate))
+  override def filter(predicate:A=>Boolean): MyList[A] =
+    if(predicate(h)) new NonEmpty[A](h,t.filter(predicate))
     else t.filter(predicate)
 
   /*[1,2]++[3,4,5]
@@ -128,19 +119,19 @@ object ListTest extends App()
   println(lst1.toString)
 
   println("==========================Advanced Implementation==========================")
-  println(lst.filter(new MyPredicate[Int] {
-    override def test(element: Int): Boolean = (element%2)==0
+  println(lst.filter(new Function[Int,Boolean] {
+    override def apply(element: Int): Boolean = (element%2)==0
   }))
-  println(lst.map(new MyTransformer[Int,Int] {
-    override def transform(element: Int): Int = element*2
+  println(lst.map(new Function1[Int,Int] {
+    override def apply(element: Int): Int = element*2
   }))
 
   println(lst++lst1)
 
-  println(lst.flatMap(new MyTransformer[Int,MyList[Int]] {
-    override def transform(element: Int): MyList[Int] = new NonEmpty[Int](element,new NonEmpty[Int](element+1,Empty1))
+  println(lst.flatMap(new Function1[Int,MyList[Int]] {
+    override def apply(element: Int): MyList[Int] = new NonEmpty[Int](element,new NonEmpty[Int](element+1,Empty1))
   }))
-println("===========================Case Class========================")
+  println("===========================Case Class========================")
   println(lst1clone2==lst1clone)//Implementation of Equals and now our list is serializable
 }
 

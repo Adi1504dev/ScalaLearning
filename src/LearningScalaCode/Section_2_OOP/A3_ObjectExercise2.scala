@@ -1,4 +1,4 @@
-package LearningScalaCode.Setion_2_OOP
+package LearningScalaCode.Section_2_OOP
 
 object A3_ObjectExercise2 extends App {
   val c = new counter(235)
